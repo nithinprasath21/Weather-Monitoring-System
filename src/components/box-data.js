@@ -1,6 +1,23 @@
 import '../App.css';
 import logosvg from '../Images/Weather-SVG/02d.svg'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 function BoxData() {
+  const [tempin, setTempin] = useState(null);
+  const [error, setError] = useState(null);
+  
+  useEffect(() => {
+    axios.get('http://192.168.29.79:8000/process/api')
+      .then(response => {
+        setTempin(response.data.tempin);
+        
+      })
+      .catch(error => {
+        setError(error);
+      });
+  }, []);
+
     return(
       <div className="box">
         {/* <div className="box-data">
@@ -34,7 +51,7 @@ function BoxData() {
           </div>
           <div className="text">
             <h4>Inside Temperature</h4>
-            <span>17°C</span>
+            <span>{tempin}°C</span>
           </div>
           <div className="text">
             <h4>Outside Temperature</h4>
@@ -45,22 +62,22 @@ function BoxData() {
         <div className="container1">
           <div className="row">
             <div className="col1">
-              <h3>Heading 1</h3>
-              <span>Content 1</span>
+              <h3>Humidity</h3>
+              <span>62%</span>
             </div>
             <div className="col1">
-              <h3>Heading 2</h3>
-              <span>Content 2</span>
+              <h3>Wind</h3>
+              <span>0.2 Miles/Hr</span>
             </div>
           </div>
           <div className="row">
             <div className="col1">
-              <h3>Heading 3</h3>
-              <span>Content 3</span>
+              <h3>Rain Rate</h3>
+              <span>0.00 mm</span>
             </div>
             <div className="col1">
-              <h3>Heading 4</h3>
-              <span>Content 4</span>
+              <h3>UV Index</h3>
+              <span>3</span>
             </div>
           </div>
         </div>
