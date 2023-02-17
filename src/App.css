@@ -1,0 +1,248 @@
+.header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('./Images/KCT_Banner.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 384px;
+}
+.header-text{
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  display: inline;
+  border: 6px solid #fff;
+  margin: 0;
+  padding: 10px 30px 24px;
+  letter-spacing: 2px;
+}
+.charts-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.chart-item {
+text-align: center;
+width: 33.33%;
+}
+
+.button-graph{
+  display: flex;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  transition: transform 0.2s;
+}
+.button-group {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.button-group-graph{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.99);
+}
+.box{
+  display: block;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+.box-data{
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: rgba(64, 64, 64, 0.7);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.box-element{
+  display: block;
+  color: #fff;
+  font-size: xx-large;
+  font-weight: bold;
+}
+.box1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(64, 64, 64, 0.7);
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+.box1 .image {
+  border-radius: 10px;
+  width: 200px;
+  height: auto;
+}
+
+.box1 .text {
+  font-size: 1.2rem;
+  color: #fff;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers content horizontally */
+  justify-content: center; /* centers content vertically */
+  text-align: center;
+}
+
+h4 {
+  font-size: x-large;
+  margin: 0;
+}
+.logo{
+  text-align: center;
+}
+span {
+  font-size: larger;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  background-color: rgba(64, 64, 64, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center; /* centers content horizontally */
+  justify-content: center; /* centers content vertically */
+  text-align: center;
+}
+
+.col1 {
+  flex-basis: calc(50% - 10px);
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+
+/* FOOTER */
+
+.page-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.mainfooter{
+  margin-top: auto;
+  background-color: #142a4f;
+  color: white;
+  padding-top: 2em;
+  width:100%;
+  bottom : 0;
+}
+/* .page-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+} */
+/* .container-wrap{
+  flex:1;
+} */
+.container{
+  display:flex;
+  justify-content: space-around;
+}
+
+li{
+  color: rgba(255, 255, 255, 0.72) ;
+}
+
+.social-media{
+  width: 20px;
+  height: 24px;
+}
+/* .row{
+  display: flex;
+  justify-content: space-around;
+} */
+
+.top-link{
+  display: flex;
+  justify-content: center;
+}
+
+.copyright{
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+}
+
+
+.top-link{
+  margin-bottom: 1rem;
+}
+.logo-contact{
+  display:flex;
+  flex-direction: column ;
+}
+
+img{
+  height: 5rem;
+  width: 18rem;
+}
+
+ul{
+  list-style: none;
+  line-height: 25px;
+}
+
+ul.social-media-icons{
+  display: flex;
+  justify-content: space-between;
+}
+
+.link-heading{
+  color: white;
+  font-size: 19px;
+  margin-bottom: 10px;
+  font-weight: bolder ;
+}
+
+/*  RESPONSIVE */
+
+@media (max-width: 768px) {
+  .chart-item {
+    width: 100%;
+  }
+  .button-group{
+    margin-left: 5%;
+  }
+  .button-graph{
+    width: 100%;
+    margin-left: 0;
+  }
+}
