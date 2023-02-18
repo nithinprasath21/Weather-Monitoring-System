@@ -5,57 +5,46 @@ import axios from 'axios';
 
 function BoxData() {
   const [tempin, setTempin] = useState(null);
+  const [tempout, setTempout] = useState(null);
+  const [humidity, setHumidity] = useState(null);
+  const [windspeed, setWindspeed] = useState(null);
+  const [rainrate, setRainrate] = useState(null);
+  const [uv, setUv] = useState(null);
   const [error, setError] = useState(null);
-  
+    
   useEffect(() => {
     axios.get('http://192.168.29.79:8000/process/api')
       .then(response => {
         setTempin(response.data.tempin);
+        setTempout(response.data.tempout);
+        setHumidity(response.data.humidity);
+        setWindspeed(response.data.windspeed);
+        setRainrate(response.data.rainrate);
+        setUv(response.data.uv);
         
       })
       .catch(error => {
         setError(error);
       });
   }, []);
-
+  
     return(
       <div className="box">
-        {/* <div className="box-data">
-          <img src={logosvg} width={200} alt='logo'/>
-          <div className='box-element'>
-            <h4>Inside Temperature</h4>
-            <span>17°C</span>
-          </div>
-          <div className='box-element'>
-            <h4>Outside Temperature</h4>
-            <span>28°C</span>
-          </div>
-        </div>
-        <div className="box-data">
-          <img src={logosvg} width={200} alt='logo'/>
-          <div className='box-element'>
-            <h4>Inside Temperature</h4>
-            <span>17°C</span>
-          </div>
-          <div className='box-element'>
-            <h4>Outside Temperature</h4>
-            <span>28°C</span>
-          </div>
-        </div> */}
-
+        <p>{error}</p>
         <div className="box1">
           <div className='logo'>
+            
             <img
               src={logosvg} alt="logo" className="image" />
             <h4>Scattered clouds</h4>
           </div>
           <div className="text">
             <h4>Inside Temperature</h4>
-            <span>{tempin}°C</span>
+            <span>{tempin}°F</span>
           </div>
           <div className="text">
             <h4>Outside Temperature</h4>
-            <span>28°C</span>
+            <span>{tempout}°F</span>
           </div>
         </div>
 
@@ -63,21 +52,21 @@ function BoxData() {
           <div className="row">
             <div className="col1">
               <h3>Humidity</h3>
-              <span>62%</span>
+              <span>{humidity}%</span>
             </div>
             <div className="col1">
               <h3>Wind</h3>
-              <span>0.2 Miles/Hr</span>
+              <span>{windspeed} Miles/Hr</span>
             </div>
           </div>
           <div className="row">
             <div className="col1">
               <h3>Rain Rate</h3>
-              <span>0.00 mm</span>
+              <span>{rainrate} mm</span>
             </div>
             <div className="col1">
               <h3>UV Index</h3>
-              <span>3</span>
+              <span>{uv}</span>
             </div>
           </div>
         </div>
