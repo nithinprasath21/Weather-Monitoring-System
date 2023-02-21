@@ -32,30 +32,20 @@ function BoxData() {
   const imageUrl = `./Weather-SVG/${icon}.svg`;
     return(
       <div className="box">
-        <div className='grid'>
-          <div className="box1">
-            <div className='logo1'>
-              <img src={imageUrl} alt="logo" className="image" />
-              <h4>{desc}</h4>
-            </div>
-            <div className="text">
-              <span>{tempin}°C</span>
-              <h4>Inside Temperature</h4>
-            </div>
+        <div className="box1">
+          <div className='logo1'>
+            <img src={imageUrl} alt="logo" className="image" />
+            <h4>{desc}</h4>
           </div>
-
-          <div className="box1">
-            <div className='logo1'>
-              <img src={imageUrl} alt="logo" className="image" />
-              <h4>{desc}</h4>
-            </div>
-            <div className="text">
-              <span>{tempout}°C</span>
-              <h4>Outside Temperature</h4>
-            </div>
+          <div className="text">
+            <span>{tempin}°C</span>
+            <h4>Inside Temperature</h4>
+          </div>
+          <div className="text">
+            <span>{tempout}°C</span>
+            <h4>Outside Temperature</h4>
           </div>
         </div>
-
         <div className="container1">
           <div className="row">
             <div className="col1">
@@ -76,24 +66,6 @@ function BoxData() {
               <span>{uv}</span>
               <h3>UV Index</h3>
             </div>
-          </div>
-        </div>
-        <div className='container2'>
-          <div className="col1">
-            <span>{humidity}%</span>
-            <h3>Humidity</h3>
-          </div>
-          <div className="col1">
-          <span>{windspeed} Miles/Hr</span>
-              <h3>Wind Speed</h3>
-          </div>
-          <div className="col1">
-          <span>{rainrate} mm</span>
-              <h3>Rain Rate</h3>
-          </div>
-          <div className="col1">
-          <span>{uv}</span>
-              <h3>UV Index</h3>
           </div>
         </div>
       </div>
