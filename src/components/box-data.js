@@ -38,12 +38,12 @@ function BoxData() {
             <h4>{desc}</h4>
           </div>
           <div className="text">
-            <span>{tempin}°C</span>
-            <h4>Inside Temperature</h4>
-          </div>
-          <div className="text">
             <span>{tempout}°C</span>
             <h4>Outside Temperature</h4>
+          </div>
+          <div className="text">
+            <span>{tempin}°C</span>
+            <h4>Inside Temperature</h4>
           </div>
         </div>
         <div className="container1">
