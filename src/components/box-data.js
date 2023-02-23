@@ -14,7 +14,7 @@ function BoxData() {
   const [desc, setDesc] = useState(null);
     
   useEffect(() => {
-    axios.get('http://192.168.29.79:8000/process/api')
+    axios.get('https://back-djyc.vercel.app/process/api')
       .then(response => {
         setTempin(response.data.tempin);
         setTempout(response.data.tempout);
