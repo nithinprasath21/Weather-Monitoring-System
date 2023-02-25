@@ -46,7 +46,7 @@ function BoxData() {
             <h4>Inside Temperature</h4>
           </div>
         </div>
-        <div className="container1">
+        {/* <div className="container1">
           <div className="row">
             <div className="col1">
               <span>{humidity}%</span>
@@ -65,6 +65,44 @@ function BoxData() {
             <div className="col1">
               <span>{uv}</span>
               <h3>UV Index</h3>
+            </div>
+          </div>
+        </div> */}
+        <div className="container2">
+          <div className='container2-content'>
+            <div className='container2-image'>
+              <img src={'https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/humidity.svg'} width={100} alt='icon'/>
+            </div>
+            <div className='container2-text'>
+              <span>{humidity} %</span>
+              <h4>Humidity</h4>
+            </div>
+          </div>
+          <div className='container2-content'>
+            <div className='container2-image'>
+              <img src={'https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/wind.svg'} width={100} alt='icon'/>
+            </div>
+            <div className='container2-text'>
+              <span>{windspeed} Km/Hr</span>
+              <h4>Wind Speed</h4>
+            </div>
+          </div>
+          <div className='container2-content'>
+            <div className='container2-image'>
+              <img src={'https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/pressure-low.svg'} width={100} alt='icon'/>
+            </div>
+            <div className='container2-text'>
+              <span>{rainrate} mm</span>
+              <h4>Rain Rate</h4>
+            </div>
+          </div>
+          <div className='container2-content'>
+            <div className='container2-image'>
+              <img src={'https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/sunset.svg'} width={100} alt='icon'/>
+            </div>
+            <div className='container2-text'>
+              <span>{uv}</span>
+              <h4>UV Index</h4>
             </div>
           </div>
         </div>

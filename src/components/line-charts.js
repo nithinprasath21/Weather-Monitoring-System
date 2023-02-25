@@ -48,10 +48,13 @@ export const options = {
       }
     },
     y: {
-      suggestedMin:27,
+      suggestedMin: 27,
       suggestedMax: 35,
       grid: {
         display: false
+      },
+      border:{
+        display: false,
       },
       ticks: {
         display: false
@@ -119,10 +122,8 @@ function LineCharts() {
         fill: 'start',
         label: "Year",
         data: UserData.map((data) => data.windSpeed),
-        backgroundColor: [
-          "rgba(75,192,192,0.7)"
-        ],
-        borderColor: 'rgb(53, 162, 235)',
+        backgroundColor: "rgba(144, 238, 144, 0.8)",
+        borderColor: 'rgb(0, 128, 0)',
         borderWidth: 1
       },
     ],
