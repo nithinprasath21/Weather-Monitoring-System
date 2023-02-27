@@ -19,8 +19,8 @@ function Footer() {
 
           <div className='logo-contact'>
             <img src={kct} alt="kct"/>
-            <div classname="">
-              <div classname="col">
+            <div className="">
+              <div className="col">
                 <ul className="list-unstyled">
                 <li className='link-heading'>Contact details</li>
                   <li>

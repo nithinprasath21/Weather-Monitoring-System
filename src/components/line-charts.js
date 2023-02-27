@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { UserData } from "../Data";
 import '../App.css';
 import { Line } from "react-chartjs-2";
@@ -15,6 +15,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Button } from "@mui/material";
+import axios from "axios";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -86,14 +87,15 @@ function LineCharts() {
   const handleButtonClick = (component) => {
     setSelectedComponent(component);
   };
-  // eslint-disable-next-line
-  const [userData1, setUserData] = useState({
+
+ 
+  const [userData1, setUserData1] = useState({
     labels: UserData.map((data) => data.day),
     datasets: [
       {
         fill: 'start',
         label: "Year",
-        data: UserData.map((data) => data.temperature),
+        data: [],
         backgroundColor: [
           "rgba(75,192,192,0.7)"
         ],
@@ -102,34 +104,49 @@ function LineCharts() {
       },
     ],
   });
-  const [userData2] = useState({
+  const [userData2, setUserData2] = useState({
     labels: UserData.map((data) => data.day),
     datasets: [
       {
         fill: 'start',
         label: "Year",
-        data: UserData.map((data) => data.humidity),
+        data: [],
         backgroundColor: 'rgba(255, 99, 132, 0.6)',
       borderColor: 'rgba(255, 99, 132, 1)',
       borderWidth: 1,
       },
     ],
   });
-  const [userData3] = useState({
+
+  const [userData3, setUserData3] = useState({
     labels: UserData.map((data) => data.day),
     datasets: [
       {
         fill: 'start',
         label: "Year",
-        data: UserData.map((data) => data.windSpeed),
+        data: [],
         backgroundColor: "rgba(144, 238, 144, 0.8)",
         borderColor: 'rgb(0, 128, 0)',
         borderWidth: 1
       },
     ],
   });
+
+  console.log(userData1)
+
+  useEffect(() => {
+    (async ()  => { 
+      const data = await axios.get('https://back-djyc.vercel.app/process/chart')
+      const temp = data.data.chart.map(data => data.temperature) 
+      const hum = data.data.chart.map(data => data.humidity) 
+      const wind = data.data.chart.map(data => data.windSpeed) 
+      setUserData1((existing) => ({labels:existing.labels,datasets:[{data:temp,backgroundColor:existing.datasets[0].backgroundColor,borderColor:existing.datasets[0].borderColor,borderWidth:existing.datasets[0].borderWidth,fill:existing.datasets[0].fill,label:existing.datasets[0].label}]}))
+      setUserData2((existing) => ({labels:existing.labels,datasets:[{data:hum,backgroundColor:existing.datasets[0].backgroundColor,borderColor:existing.datasets[0].borderColor,borderWidth:existing.datasets[0].borderWidth,fill:existing.datasets[0].fill,label:existing.datasets[0].label}]}))
+      setUserData3((existing) => ({labels:existing.labels,datasets:[{data:wind,backgroundColor:existing.datasets[0].backgroundColor,borderColor:existing.datasets[0].borderColor,borderWidth:existing.datasets[0].borderWidth,fill:existing.datasets[0].fill,label:existing.datasets[0].label}]}))
+    })()
+  },[])
   return (
-    <>
+    <div>
     <div className="button-group-graph">
       <div className="button-group">
         <Button variant='contained' color="secondary" className="button" onClick={() => handleButtonClick('temperature')}>Temperature</Button>
@@ -160,7 +177,7 @@ function LineCharts() {
       </div>
       
     </div> */}
-    </>
+    </div>
   );
 }
 
