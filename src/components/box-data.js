@@ -46,28 +46,6 @@ function BoxData() {
             <h4>Inside Temperature</h4>
           </div>
         </div>
-        {/* <div className="container1">
-          <div className="row">
-            <div className="col1">
-              <span>{humidity}%</span>
-              <h3>Humidity</h3>
-            </div>
-            <div className="col1">
-              <span>{windspeed} Miles/Hr</span>
-              <h3>Wind Speed</h3>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col1">
-              <span>{rainrate} mm</span>
-              <h3>Rain Rate</h3>
-            </div>
-            <div className="col1">
-              <span>{uv}</span>
-              <h3>UV Index</h3>
-            </div>
-          </div>
-        </div> */}
         <div className="container2">
           <div className='container2-content'>
             <div className='container2-image'>
