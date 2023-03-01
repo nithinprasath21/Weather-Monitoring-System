@@ -15,6 +15,7 @@
   margin: 0;
   padding: 10px 30px 24px;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 .grid{
@@ -117,11 +118,15 @@ button:active {
 
 h4 {
   font-size: x-large;
+  font-weight: lighter;
   margin: 0;
 }
 .logo1{
   text-align: center;
   color: #fff;
+}
+.logo1 h4{
+  font-weight: bolder;
 }
 span {
   font-size: larger;
@@ -138,7 +143,6 @@ span {
 .container2 {
   display: flex;
   background-image: linear-gradient(to bottom right, #43c6ac, #191654);
-  margin-top: 5%;
   border-radius: 10px;
 }
 .container2-image{
@@ -193,6 +197,22 @@ h3 {
   margin-bottom: 10px;
 }
 
+.box-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+.box1{
+  flex-basis: 50%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.box1:nth-child(1) {
+  flex-basis: 66%;
+  margin-right: 1%;
+}
+.box1:nth-child(2) {
+  flex-basis: 33%;
+}
 
 /* FOOTER */
 
@@ -284,7 +304,7 @@ a{
 
 /*  RESPONSIVE */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 796px) {
   .container2{
     overflow-x: scroll;
   } 
@@ -332,4 +352,30 @@ a{
     padding-right:1rem ;
     padding-left: 1rem;
   }
+  .box1:nth-child(1) {
+    flex-basis: 100%;
+  }
+  .box1:nth-child(2) {
+    flex-basis: 80%;
+  }
+  .box-container{
+    justify-content: center;  
+  }
+}
+@media only screen and (max-width: 500px){
+  .container2-content{
+    min-width: 60%;
+    padding-right: 2%;
+  }
+  .box1:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+  }
+  .logo1{
+    padding-bottom: 5%;
+    border-bottom: 2px solid #fff;
+  }
+  /* .box1:nth-child(2) {
+    flex-basis: 80%;
+  } */
 }

@@ -32,18 +32,22 @@ function BoxData() {
   const imageUrl = `./Weather-SVG/${icon}.svg`;
     return(
       <div className="box">
-        <div className="box1">
-          <div className='logo1'>
-            <img src={imageUrl} alt="logo" className="image" />
-            <h4>{desc}</h4>
+        <div className='box-container'>
+          <div className="box1">
+            <div className='logo1'>
+              <img src={imageUrl} alt="logo" className="image" />
+              <h4>{desc}</h4>
+            </div>
+            <div className="text">
+              <span>{tempout}°C</span>
+              <h4>Outside Temperature</h4>
+            </div>
           </div>
-          <div className="text">
-            <span>{tempout}°C</span>
-            <h4>Outside Temperature</h4>
-          </div>
-          <div className="text">
-            <span>{tempin}°C</span>
-            <h4>Inside Temperature</h4>
+          <div className='box1'>
+            <div className='text'>
+              <span>{tempin}°C</span>
+              <h4>Inside Temperature</h4>
+            </div>
           </div>
         </div>
         <div className="container2">
