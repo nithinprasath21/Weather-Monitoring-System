@@ -5,7 +5,7 @@ function Header() {
         <div>
           <header className='header'>
             <div className="header-text">
-              <h1>Weather Analysis KCT</h1>
+              <h1>Weather KCT</h1>
             </div>
           </header>
         </div>

@@ -129,7 +129,7 @@ function LineCharts() {
   });
   useEffect(() => {
     (async ()  => { 
-      const data = await axios.get('https://back-djyc.vercel.app/process/chart')
+      const data = await axios.get('https://back-production-38c0.up.railway.app/process/chart')
       const temp = data.data.chart.map(data => data.temperature)
       const hum = data.data.chart.map(data => data.humidity)
       const wind = data.data.chart.map(data => data.windSpeed)
