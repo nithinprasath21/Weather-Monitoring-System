@@ -14,7 +14,7 @@ function BoxData() {
   const [desc, setDesc] = useState(null);
     
   useEffect(() => {
-    axios.get('https://back-production-38c0.up.railway.app/process/api')
+    axios.get('https://kct-weather-api.azurewebsites.net/process/api')
       .then(response => {
         setTempin(response.data.tempin);
         setTempout(response.data.tempout);

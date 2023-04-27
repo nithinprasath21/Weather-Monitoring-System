@@ -129,7 +129,7 @@ function LineCharts() {
   });
   useEffect(() => {
     (async ()  => { 
-      const data = await axios.get('https://back-production-38c0.up.railway.app/process/chart')
+      const data = await axios.get('https://kct-weather-api.azurewebsites.net/process/chart')
       const temp = data.data.chart.map(data => data.temperature)
       const hum = data.data.chart.map(data => data.humidity)
       const wind = data.data.chart.map(data => data.windSpeed)
@@ -151,6 +151,11 @@ function LineCharts() {
           {selectedComponent === 'temperature' && <Line options={options} data={userData1} />}
           {selectedComponent === 'humidity' && <Line options={options} data={userData2} />}
           {selectedComponent === 'barometer' && <Line options={options} data={userData3} />}
+        </div>
+        <div className="graph-text">
+          {selectedComponent === 'temperature' && <p className="graph-text">Temperature</p>}
+          {selectedComponent === 'humidity' && <p className="graph-text">Humidity</p>}
+          {selectedComponent === 'barometer' && <p className="graph-text">Barometer</p>}
         </div>
       </div>
     </div>

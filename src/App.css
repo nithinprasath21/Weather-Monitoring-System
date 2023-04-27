@@ -65,6 +65,12 @@ button:hover {
 button:active {
   transform: scale(0.99);
 }
+.graph-text{
+  display: flex;
+  font-size: large;
+  font-weight: bold;
+  margin: 1% auto 0 auto;
+}
 .box{
   display: block;
   width: 80%;
